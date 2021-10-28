@@ -1,3 +1,7 @@
+:root {
+    --main-padding: 0.4rem;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 * {
@@ -7,20 +11,14 @@
 }
 
 .container {
-    background-color: #171615;
-    display: grid;
+    background-color: #171615;    
     font-family: 'Lato', sans-serif;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 0.1fr 1fr 1fr 0.25fr 1fr;
-    grid-template-areas: 
-    "nav-container nav-container nav-container"
-    "header header header"
-    "feature1 feature2 feature3"
-    "sign-up sign-up sign-up"
-    "content content content"
-    ;
     height: 100vh;
     text-align: center;
+}
+nav {
+    grid-area: nav-container;
+    padding: var(--main-padding);
 }
 
 #nav-container a {
@@ -37,19 +35,37 @@
 
 #nav-container a:hover {
     transform: scale(1.15);
+    color: #EB6123;
+    border: 1px solid #EB6123;
 }
 
-#services {
+#main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "snacks drinks entertainment"
+    "img-gallery img-gallery img-gallery"
+    ;
+}
+
+#snacks {
+
     background-color: #EB6123;
+    grid-area: snacks;
+    padding: var(--main-padding);
 }
 
-#services h3{
-    text-transform: uppercase;
-    font-size: 27px;
+#drinks {
+    background-color: #F5CD08;
+    grid-area: drinks;
+    padding: var(--main-padding);
 }
 
-.snacks {
-    text-transform: justify;
+#entertainment {
+    background-color: #EB6123;
+    grid-area: entertainment;
+    padding: var(--main-padding);
 }
 
 #img-gallery {
